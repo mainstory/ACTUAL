@@ -394,6 +394,11 @@ body._scroll-hidden {
   }
 }
 
+.test {
+  background-color: rgb(241, 189, 98);
+  padding-top: 300px;
+}
+
 .experience {
   transform: translateY(50%);
   position: absolute;
