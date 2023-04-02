@@ -350,9 +350,19 @@ body {
   font-weight: 500;
   font-size: 21px;
   line-height: 147.619047619%;
-  text-align: center;
   letter-spacing: 0.02em;
   color: var(--color-black);
+}
+@media (max-width: 1024.2px) {
+  ._title-little {
+    /* Если меньше контейнера */
+    font-size: 21px;
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  ._title-little {
+    font-size: calc(19px + 2 * ((100vw - 320px) / 880));
+  }
 }
 
 ._text {
@@ -362,7 +372,7 @@ body {
   color: var(--color-gray);
 }
 
-.link {
+.request-link {
   display: inline-flex;
   align-items: center;
   cursor: pointer;
@@ -370,16 +380,34 @@ body {
   padding-right: 30px;
   padding-left: 30px;
   background-color: var(--color-white);
+  transition: background-color 0.3s;
 }
-.link__icon {
+@media (any-hover: hover) {
+  .request-link:hover {
+    background-color: var(--color-dark);
+  }
+  .request-link:hover .request-link__text {
+    color: #fff;
+  }
+  .request-link:hover .request-link__icon svg * {
+    fill: #fff;
+  }
+}
+.request-link__icon {
   margin-right: 15px;
 }
-.link__text {
+.request-link__icon svg * {
+  transition: fill 0.3s;
+  fill: #000;
+}
+.request-link__text {
   font-weight: 500;
   font-size: 14px;
   line-height: 150%;
   letter-spacing: 0.05em;
   color: var(--color-black);
+  transition: color 0.3s;
+  white-space: nowrap;
 }
 
 ._container {
@@ -404,7 +432,12 @@ body {
 }
 @media (max-width: 1024.2px) and (max-width: 1200px) {
   .main-block {
-    margin-bottom: calc(220px + 30 * ((100vw - 320px) / 880));
+    margin-bottom: calc(130px + 120 * ((100vw - 320px) / 880));
+  }
+}
+@media (max-width: 552.2px) {
+  .main-block {
+    margin-bottom: 250px;
   }
 }
 .main-block__body {
@@ -671,7 +704,6 @@ body {
 .projects-item__img::before {
   content: "";
   display: block;
-  z-index: 100;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -708,4 +740,199 @@ body {
   .projects-item__text {
     max-width: none;
   }
+}
+
+.request {
+  margin-bottom: 152px;
+  background-color: var(--color-orange);
+}
+@media (max-width: 1024.2px) {
+  .request {
+    /* Если меньше контейнера */
+    margin-bottom: 152px;
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .request {
+    margin-bottom: calc(30px + 122 * ((100vw - 320px) / 880));
+  }
+}
+.request__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  gap: 30px;
+  padding-top: 32px;
+  padding-bottom: 43px;
+}
+@media (max-width: 552.2px) {
+  .request__body {
+    display: block;
+    text-align: center;
+  }
+}
+@media (max-width: 1024.2px) {
+  .request__body {
+    /* Если меньше контейнера */
+    padding-top: 32px;
+    /* Если меньше контейнера */
+    padding-bottom: 43px;
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .request__body {
+    padding-top: calc(30px + 2 * ((100vw - 320px) / 880));
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .request__body {
+    padding-bottom: calc(30px + 13 * ((100vw - 320px) / 880));
+  }
+}
+.request__title {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 71px;
+  line-height: 147.9166666667%;
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
+}
+@media (max-width: 1024.2px) {
+  .request__title {
+    /* Если меньше контейнера */
+    font-size: 48px;
+    /* Если меньше контейнера */
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .request__title {
+    font-size: calc(32px + 16 * ((100vw - 320px) / 880));
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .request__title {
+    margin-bottom: calc(15px + 5 * ((100vw - 320px) / 880));
+  }
+}
+.request__sub-title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+}
+@media (max-width: 1024.2px) {
+  .request__sub-title {
+    /* Если меньше контейнера */
+    font-size: 24px;
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .request__sub-title {
+    font-size: calc(16px + 8 * ((100vw - 320px) / 880));
+  }
+}
+@media (max-width: 552.2px) {
+  .request__sub-title {
+    margin-bottom: 30px;
+  }
+}
+.services {
+  margin-bottom: 150px;
+}
+@media (max-width: 1024.2px) {
+  .services {
+    /* Если меньше контейнера */
+    margin-bottom: 150px;
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .services {
+    margin-bottom: calc(30px + 120 * ((100vw - 320px) / 880));
+  }
+}
+.services__title {
+  margin-bottom: 66px;
+}
+@media (max-width: 1024.2px) {
+  .services__title {
+    /* Если меньше контейнера */
+    margin-bottom: 66px;
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .services__title {
+    margin-bottom: calc(30px + 36 * ((100vw - 320px) / 880));
+  }
+}
+.services__columns {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 1024.2px) {
+  .services__columns {
+    /* Если меньше контейнера */
+    grid-gap: 30px;
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .services__columns {
+    grid-gap: calc(15px + 15 * ((100vw - 320px) / 880));
+  }
+}
+@media (max-width: 768.2px) {
+  .services__columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 552.2px) {
+  .services__columns {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.services-item {
+  background-color: var(--color-light-gray);
+  text-align: center;
+  width: 100%;
+  padding-top: 59px;
+  padding-bottom: 59px;
+}
+.services-item__img {
+  margin-bottom: 30px;
+}
+.services-item__img img {
+  max-width: 100%;
+}
+.gallery {
+  margin-bottom: 150px;
+}
+@media (max-width: 1024.2px) {
+  .gallery {
+    /* Если меньше контейнера */
+    margin-bottom: 150px;
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .gallery {
+    margin-bottom: calc(30px + 120 * ((100vw - 320px) / 880));
+  }
+}
+.gallery__body {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width: 1370.2px) {
+  .gallery__body {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 552.2px) {
+  .gallery__body {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.gallery__img img {
+  width: 100%;
 }
