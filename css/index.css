@@ -106,9 +106,6 @@ body {
   background-color: #e5e5e5;
   font-family: "Oswald";
 }
-body._scroll-hidden {
-  overflow: hidden;
-}
 
 .burger {
   background-color: #f7654a;
@@ -116,6 +113,18 @@ body._scroll-hidden {
   padding: 15px;
   width: 50px;
   height: 50px;
+}
+@media (any-hover: hover) {
+  .burger {
+    transition: background-color 0.3s;
+  }
+  .burger:hover {
+    background-color: #fff;
+  }
+  .burger:hover .burger__icon span {
+    transition: background-color 0.3s;
+    background-color: var(--color-orange);
+  }
 }
 .burger__icon {
   width: 21px;
@@ -147,13 +156,32 @@ body._scroll-hidden {
   top: 0;
   left: 0;
   width: 100%;
-  margin-top: 20px;
   z-index: 10;
+  transition: background-color 0.3s;
+}
+.header._active {
+  background-color: rgba(62, 60, 67, 0.9411764706);
+}
+.header._active .header__body {
+  height: 80px;
 }
 .header__body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100px;
+  transition: height 0.3s;
+}
+@media (max-width: 1024.2px) {
+  .header__body {
+    /* Если меньше контейнера */
+    height: 100px;
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .header__body {
+    height: calc(80px + 20 * ((100vw - 320px) / 880));
+  }
 }
 .header__logo {
   width: 60px;
@@ -272,6 +300,17 @@ body._scroll-hidden {
   line-height: 147.2222222222%;
   color: var(--color-black);
 }
+@media (max-width: 1024.2px) {
+  ._title-big {
+    /* Если меньше контейнера */
+    font-size: 36px;
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  ._title-big {
+    font-size: calc(31px + 5 * ((100vw - 320px) / 880));
+  }
+}
 
 ._title-middle {
   font-weight: 500;
@@ -327,7 +366,8 @@ body._scroll-hidden {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 100%;
+  margin-bottom: 250px;
 }
 .main-block__body {
   display: flex;
@@ -392,11 +432,6 @@ body._scroll-hidden {
   .main-block__sub-title {
     font-size: calc(14px + 4 * ((100vw - 320px) / 880));
   }
-}
-
-.test {
-  background-color: rgb(241, 189, 98);
-  padding-top: 300px;
 }
 
 .experience {
@@ -516,5 +551,106 @@ body._scroll-hidden {
 @media (max-width: 1024.2px) and (max-width: 1200px) {
   .experience__sub-title {
     font-size: calc(14px + 4 * ((100vw - 320px) / 880));
+  }
+}
+
+.projects {
+  margin-bottom: 115px;
+}
+@media (max-width: 1024.2px) {
+  .projects {
+    /* Если меньше контейнера */
+    margin-bottom: 115px;
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .projects {
+    margin-bottom: calc(30px + 85 * ((100vw - 320px) / 880));
+  }
+}
+.projects__title {
+  margin-bottom: 60px;
+}
+@media (max-width: 1024.2px) {
+  .projects__title {
+    /* Если меньше контейнера */
+    margin-bottom: 60px;
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .projects__title {
+    margin-bottom: calc(30px + 30 * ((100vw - 320px) / 880));
+  }
+}
+.projects__columns {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 1024.2px) {
+  .projects__columns {
+    /* Если меньше контейнера */
+    grid-gap: 30px;
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .projects__columns {
+    grid-gap: calc(10px + 20 * ((100vw - 320px) / 880));
+  }
+}
+@media (max-width: 552.2px) {
+  .projects__columns {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 30px;
+  }
+}
+.projects-item__img {
+  margin: 0px auto;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+.projects-item__img img {
+  max-width: 100%;
+}
+@media (max-width: 1024.2px) {
+  .projects-item__img {
+    /* Если меньше контейнера */
+    padding-bottom: 50px;
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .projects-item__img {
+    padding-bottom: calc(10px + 40 * ((100vw - 320px) / 880));
+  }
+}
+.projects-item__title {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+@media (max-width: 1024.2px) {
+  .projects-item__title {
+    /* Если меньше контейнера */
+    margin-top: 15px;
+    /* Если меньше контейнера */
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .projects-item__title {
+    margin-top: calc(5px + 10 * ((100vw - 320px) / 880));
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .projects-item__title {
+    margin-bottom: calc(10px + 10 * ((100vw - 320px) / 880));
+  }
+}
+.projects-item__text {
+  max-width: 350px;
+}
+@media (max-width: 552.2px) {
+  .projects-item__text {
+    max-width: none;
   }
 }
