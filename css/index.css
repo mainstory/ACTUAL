@@ -111,8 +111,13 @@ body {
   background-color: #f7654a;
   display: inline-block;
   padding: 15px;
-  width: 50px;
-  height: 50px;
+  /* Если меньше контейнера */
+  padding: 15px;
+}
+@media (max-width: 1200px) {
+  .burger {
+    padding: calc(15px + 0 * ((100vw - 320px) / 880));
+  }
 }
 @media (any-hover: hover) {
   .burger {
@@ -165,6 +170,17 @@ body {
 .header._active .header__body {
   height: 80px;
 }
+@media (max-width: 1024.2px) {
+  .header._active .header__body {
+    /* Если меньше контейнера */
+    height: 80px;
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .header._active .header__body {
+    height: calc(70px + 10 * ((100vw - 320px) / 880));
+  }
+}
 .header__body {
   display: flex;
   justify-content: space-between;
@@ -180,11 +196,22 @@ body {
 }
 @media (max-width: 1024.2px) and (max-width: 1200px) {
   .header__body {
-    height: calc(80px + 20 * ((100vw - 320px) / 880));
+    height: calc(90px + 10 * ((100vw - 320px) / 880));
   }
 }
 .header__logo {
   width: 60px;
+}
+@media (max-width: 1024.2px) {
+  .header__logo {
+    /* Если меньше контейнера */
+    width: 60px;
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .header__logo {
+    width: calc(50px + 10 * ((100vw - 320px) / 880));
+  }
 }
 .header__logo img {
   max-width: 100%;
@@ -368,6 +395,17 @@ body {
   background-repeat: no-repeat;
   height: 100%;
   margin-bottom: 250px;
+}
+@media (max-width: 1024.2px) {
+  .main-block {
+    /* Если меньше контейнера */
+    margin-bottom: 250px;
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .main-block {
+    margin-bottom: calc(220px + 30 * ((100vw - 320px) / 880));
+  }
 }
 .main-block__body {
   display: flex;
@@ -609,9 +647,15 @@ body {
   display: flex;
   justify-content: center;
   padding-bottom: 50px;
+  position: relative;
 }
 .projects-item__img img {
   max-width: 100%;
+}
+@media (max-width: 552.2px) {
+  .projects-item__img img {
+    width: 100%;
+  }
 }
 @media (max-width: 1024.2px) {
   .projects-item__img {
@@ -621,8 +665,19 @@ body {
 }
 @media (max-width: 1024.2px) and (max-width: 1200px) {
   .projects-item__img {
-    padding-bottom: calc(10px + 40 * ((100vw - 320px) / 880));
+    padding-bottom: calc(30px + 20 * ((100vw - 320px) / 880));
   }
+}
+.projects-item__img::before {
+  content: "";
+  display: block;
+  z-index: 100;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 55px;
+  height: 6px;
+  background-color: var(--color-orange);
 }
 .projects-item__title {
   margin-top: 15px;
