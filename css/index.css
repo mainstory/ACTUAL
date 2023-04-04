@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Oswald:regular,500,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:regular&display=swap");
 :root {
   --color-orange: #F7654A;
   --color-dark: #404149;
@@ -935,4 +936,226 @@ body {
 }
 .gallery__img img {
   width: 100%;
+}
+
+.question {
+  margin-bottom: 150px;
+}
+@media (max-width: 1024.2px) {
+  .question {
+    /* Если меньше контейнера */
+    margin-bottom: 150px;
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .question {
+    margin-bottom: calc(30px + 120 * ((100vw - 320px) / 880));
+  }
+}
+.question__title {
+  margin-bottom: 50px;
+}
+@media (max-width: 1024.2px) {
+  .question__title {
+    /* Если меньше контейнера */
+    margin-bottom: 50px;
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .question__title {
+    margin-bottom: calc(15px + 35 * ((100vw - 320px) / 880));
+  }
+}
+.question-spoilers__spoiler {
+  margin-bottom: 40px;
+}
+@media (max-width: 1024.2px) {
+  .question-spoilers__spoiler {
+    /* Если меньше контейнера */
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .question-spoilers__spoiler {
+    margin-bottom: calc(20px + 20 * ((100vw - 320px) / 880));
+  }
+}
+.question-spoilers__spoiler._active .question-spoilers-button {
+  margin-bottom: 30px;
+}
+@media (max-width: 1024.2px) {
+  .question-spoilers__spoiler._active .question-spoilers-button {
+    /* Если меньше контейнера */
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .question-spoilers__spoiler._active .question-spoilers-button {
+    margin-bottom: calc(10px + 20 * ((100vw - 320px) / 880));
+  }
+}
+.question-spoilers__spoiler._active .question-spoilers-button__icon {
+  transform: rotate(90deg);
+}
+.question-spoilers__content {
+  color: var(--color-gray);
+  max-width: 730px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 137.5%;
+  font-family: "Open Sans";
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.question-spoilers-button {
+  display: flex;
+  align-items: center;
+  transition: margin-bottom 0.3s ease;
+}
+.question-spoilers-button__icon {
+  margin-right: 15px;
+  transition: transform 0.3s ease;
+}
+.question-spoilers-button__title {
+  color: var(--color-orange);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 150%;
+}
+@media (max-width: 1024.2px) {
+  .question-spoilers-button__title {
+    /* Если меньше контейнера */
+    font-size: 24px;
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .question-spoilers-button__title {
+    font-size: calc(21px + 3 * ((100vw - 320px) / 880));
+  }
+}
+
+.partners {
+  background-color: var(--color-dark);
+  padding-top: 100px;
+  padding-bottom: 100px;
+  margin-bottom: 150px;
+}
+@media (max-width: 1024.2px) {
+  .partners {
+    /* Если меньше контейнера */
+    margin-bottom: 150px;
+    /* Если меньше контейнера */
+    padding-top: 100px;
+    /* Если меньше контейнера */
+    padding-bottom: 100px;
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .partners {
+    margin-bottom: calc(30px + 120 * ((100vw - 320px) / 880));
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .partners {
+    padding-top: calc(30px + 70 * ((100vw - 320px) / 880));
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .partners {
+    padding-bottom: calc(30px + 70 * ((100vw - 320px) / 880));
+  }
+}
+.partners__title {
+  color: #fff;
+  margin-bottom: 60px;
+}
+@media (max-width: 1024.2px) {
+  .partners__title {
+    /* Если меньше контейнера */
+    margin-bottom: 60px;
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .partners__title {
+    margin-bottom: calc(30px + 30 * ((100vw - 320px) / 880));
+  }
+}
+.partners__columns {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(5, 1fr);
+}
+@media (max-width: 1024.2px) {
+  .partners__columns {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 768.2px) {
+  .partners__columns {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 552.2px) {
+  .partners__columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 425.2px) {
+  .partners__columns {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.partners__item {
+  display: flex;
+  justify-content: center;
+}
+.partners__item img {
+  max-width: 100%;
+}
+
+.reviews {
+  margin-bottom: 150px;
+}
+@media (max-width: 1024.2px) {
+  .reviews {
+    /* Если меньше контейнера */
+    margin-bottom: 150px;
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .reviews {
+    margin-bottom: calc(30px + 120 * ((100vw - 320px) / 880));
+  }
+}
+.reviews__title {
+  margin-bottom: 60px;
+}
+@media (max-width: 1024.2px) {
+  .reviews__title {
+    /* Если меньше контейнера */
+    margin-bottom: 60px;
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .reviews__title {
+    margin-bottom: calc(30px + 30 * ((100vw - 320px) / 880));
+  }
+}
+.reviews__columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+@media (max-width: 1024.2px) {
+  .reviews__columns {
+    /* Если меньше контейнера */
+    gap: 30px;
+  }
+}
+@media (max-width: 1024.2px) and (max-width: 1200px) {
+  .reviews__columns {
+    gap: calc(15px + 15 * ((100vw - 320px) / 880));
+  }
 }
