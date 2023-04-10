@@ -1,17 +1,21 @@
 import {
    burgerMenu,
-} from "./burgerMenu.js"
+} from "./chunks/burgerMenu.js"
 import {
    headerAnimation,
-} from "./headerAnimation.js"
+} from "./chunks/headerAnimation.js"
 import {
    spoilers,
-} from "./spoilers.js"
+} from "./chunks/spoilers.js"
+import {
+   sliders,
+} from "./chunks/sliders.js"
 
 
 burgerMenu()
 headerAnimation()
 spoilers()
+sliders()
 
 
 
