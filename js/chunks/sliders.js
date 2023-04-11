@@ -126,6 +126,9 @@ function sliders() {
 
 
 
+
+
+
    // ================================== // partners // ================================== //
 
 
@@ -174,10 +177,12 @@ function sliders() {
 
    start('.gallery', 1024, false, {
 
+      autoHeight: true,
+
+
       grabCursor: true,
       loop: true,
       speed: 1200,
-      autoHeight: true,
       autoplay: {
          delay: 3500,
       },
@@ -212,6 +217,8 @@ function sliders() {
    })
 
    start('.reviews', 768, false, {
+
+      autoHeight: true,
 
       spaceBetween: 30,
       grabCursor: true,
@@ -261,5 +268,10 @@ function sliders() {
 }
 
 export { sliders }
+
+
+
+
+
 
 

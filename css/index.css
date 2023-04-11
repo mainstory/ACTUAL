@@ -112,6 +112,16 @@ body {
   font-family: var(--font-family-main);
 }
 
+::-moz-selection {
+  background-color: var(--color-orange);
+  color: var(--color-white);
+}
+
+::selection {
+  background-color: var(--color-orange);
+  color: var(--color-white);
+}
+
 ._text {
   color: var(--color-gray);
   font-weight: 400;
@@ -391,7 +401,6 @@ body {
   }
 }
 
-@keyframes grow {}
 .main-block {
   background-image: url("../img/sections/main-block/01.webp");
   background-size: cover;
@@ -755,6 +764,14 @@ body {
     margin-bottom: calc(10px + 0 * ((100vw - 320px) / 880));
   }
 }
+.request__title::-moz-selection {
+  background-color: var(--color-white);
+  color: var(--color-orange);
+}
+.request__title::selection {
+  background-color: var(--color-white);
+  color: var(--color-orange);
+}
 .request__sub-title {
   color: var(--color-white);
   font-weight: 700;
@@ -773,6 +790,14 @@ body {
   .request__sub-title {
     margin-bottom: 20px;
   }
+}
+.request__sub-title::-moz-selection {
+  background-color: var(--color-white);
+  color: var(--color-orange);
+}
+.request__sub-title::selection {
+  background-color: var(--color-white);
+  color: var(--color-orange);
 }
 .request-button {
   background-color: var(--color-white);
@@ -894,11 +919,11 @@ body {
 }
 .services-columns__icon:not(:last-child) {
   /* Если меньше контейнера */
-  margin-bottom: 25px;
+  margin-bottom: 10px;
 }
 @media (max-width: 1200px) {
   .services-columns__icon:not(:last-child) {
-    margin-bottom: calc(25px + 0 * ((100vw - 320px) / 880));
+    margin-bottom: calc(10px + 0 * ((100vw - 320px) / 880));
   }
 }
 .services-columns__title {
@@ -1206,6 +1231,10 @@ body {
 .reviews__body {
   position: relative;
 }
+.reviews__body .swiper-autoheight .swiper-wrapper {
+  align-items: flex-start;
+  transition-property: transform, height;
+}
 .reviews__body .swiper {
   position: relative;
   overflow: hidden;
@@ -1308,6 +1337,11 @@ body {
   }
 }
 
+.reviews-columns__item {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
 .reviews-columns__body {
   background-color: var(--color-light-gray);
   /* Если меньше контейнера */
@@ -1429,9 +1463,13 @@ body {
 
 .contacts-columns__item {
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+}
+@media (max-width: 768.2px) {
+  .contacts-columns__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 .contacts-columns__icon:not(:last-child) {
   /* Если меньше контейнера */

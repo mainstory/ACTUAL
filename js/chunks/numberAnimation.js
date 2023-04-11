@@ -1,24 +1,22 @@
 function numberAnimation() {
 
-   function start(addNumber, end) {
+   function start(section, addNumber, end) {
 
-      const elems = document.querySelectorAll('[data-animation]')
+      const elem = document.querySelector(section)
 
-      elems.forEach((elem) => {
-         let i = 0
+      let i = 0
 
-         const timer = setInterval(() => {
+      const timer = setInterval(() => {
 
-            if (i === end) {
-               clearInterval(timer)
-            }
+         if (i === end) {
+            clearInterval(timer)
+         }
 
-            elem.innerText = i
-            i = i + addNumber
+         elem.innerText = i
+         i = i + addNumber
 
 
-         }, 50);
-      })
+      }, 50);
 
 
 
@@ -36,9 +34,11 @@ function numberAnimation() {
          const value = body.getBoundingClientRect().top
 
          if (value < 0) {
-            start(1, 26)
+            start('[data-animation-1]', 1, 26)
+            start('[data-animation-2]', 1, 27)
+            start('[data-animation-3]', 1, 28)
+            start('[data-animation-4]', 1, 29)
             document.querySelector('[data-experience]').classList.add('_stop-animation')
-
 
          }
       }
