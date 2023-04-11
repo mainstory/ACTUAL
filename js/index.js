@@ -10,12 +10,16 @@ import {
 import {
    sliders,
 } from "./chunks/sliders.js"
+import {
+   numberAnimation,
+} from "./chunks/numberAnimation.js"
 
 
 burgerMenu()
 headerAnimation()
 spoilers()
 sliders()
+numberAnimation()
 
 
 

@@ -932,29 +932,49 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
+.gallery__body .swiper-slide {
+  overflow: hidden;
+}
 .gallery__body .swiper-slide img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  transition: transform 0.3s;
+}
+@media (any-hover: hover) {
+  .gallery__body .swiper-slide:hover img {
+    transform: scale(1.05);
+  }
 }
 .gallery__body .swiper-button-prev,
 .gallery__body .swiper-button-next {
-  width: 20px;
-  height: 20px;
+  background-color: var(--color-white);
+  border: 1px solid #f0f0f0;
+  border-radius: 100vmax;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  cursor: pointer;
   display: none;
+}
+.gallery__body .swiper-button-prev:before,
+.gallery__body .swiper-button-next:before {
+  content: "";
+  background-image: url("../img/icons/arrow.svg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 18px;
+  width: 14px;
 }
 .gallery__body .swiper-button-prev._active,
 .gallery__body .swiper-button-next._active {
-  display: block;
-}
-.gallery__body .swiper-button-prev svg,
-.gallery__body .swiper-button-next svg {
-  fill: var(--color-white);
+  display: inline-flex;
 }
 .gallery__body .swiper-button-prev {
   left: 15px;
@@ -968,15 +988,15 @@ body {
   left: 50%;
   transform: translateX(-50%);
   bottom: 15px;
-  gap: 5px;
+  gap: 10px;
   display: none;
 }
 .gallery__body .swiper-pagination._active {
   display: flex;
 }
 .gallery__body .swiper-pagination .swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
+  width: 14px;
+  height: 14px;
   background-color: var(--color-light-gray);
   border-radius: 100vmax;
   cursor: pointer;
@@ -984,6 +1004,7 @@ body {
 .gallery__body .swiper-pagination .swiper-pagination-bullet-active {
   background-color: var(--color-orange);
 }
+
 .answers:not(:last-child) {
   /* Если меньше контейнера */
   margin-bottom: 150px;
@@ -1105,21 +1126,31 @@ body {
 }
 .partners__body .swiper-button-prev,
 .partners__body .swiper-button-next {
-  width: 20px;
-  height: 20px;
+  background-color: var(--color-white);
+  border-radius: 100vmax;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  cursor: pointer;
   display: none;
+}
+.partners__body .swiper-button-prev:before,
+.partners__body .swiper-button-next:before {
+  content: "";
+  background-image: url("../img/icons/arrow.svg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 18px;
+  width: 14px;
 }
 .partners__body .swiper-button-prev._active,
 .partners__body .swiper-button-next._active {
-  display: block;
-}
-.partners__body .swiper-button-prev svg,
-.partners__body .swiper-button-next svg {
-  fill: var(--color-white);
+  display: inline-flex;
 }
 .partners__body .swiper-button-prev {
   left: 0;
@@ -1133,15 +1164,15 @@ body {
   left: 50%;
   transform: translateX(-50%);
   bottom: -30px;
-  gap: 5px;
+  gap: 10px;
   display: none;
 }
 .partners__body .swiper-pagination._active {
   display: flex;
 }
 .partners__body .swiper-pagination .swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
+  width: 14px;
+  height: 14px;
   background-color: rgb(100, 100, 100);
   border-radius: 100vmax;
   cursor: pointer;
@@ -1171,6 +1202,78 @@ body {
   .reviews:not(:last-child) {
     margin-bottom: calc(75px + 75 * ((100vw - 320px) / 880));
   }
+}
+.reviews__body {
+  position: relative;
+}
+.reviews__body .swiper {
+  position: relative;
+  overflow: hidden;
+}
+.reviews__body .swiper-wrapper {
+  display: inline-flex;
+}
+.reviews__body .swiper-wrapper._grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.reviews__body .swiper-button-prev,
+.reviews__body .swiper-button-next {
+  background-color: var(--color-white);
+  border: 1px solid #f0f0f0;
+  border-radius: 100vmax;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+}
+.reviews__body .swiper-button-prev:before,
+.reviews__body .swiper-button-next:before {
+  content: "";
+  background-image: url("../img/icons/arrow.svg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 18px;
+  width: 14px;
+}
+.reviews__body .swiper-button-prev._active,
+.reviews__body .swiper-button-next._active {
+  display: inline-flex;
+}
+.reviews__body .swiper-button-prev {
+  left: 0;
+}
+.reviews__body .swiper-button-next {
+  right: 0;
+  transform: translateY(-50%) rotate(180deg);
+}
+.reviews__body .swiper-pagination {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -30px;
+  gap: 10px;
+  display: none;
+}
+.reviews__body .swiper-pagination._active {
+  display: flex;
+}
+.reviews__body .swiper-pagination .swiper-pagination-bullet {
+  width: 14px;
+  height: 14px;
+  background-color: var(--color-light-gray);
+  border-radius: 100vmax;
+  cursor: pointer;
+}
+.reviews__body .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--color-orange);
 }
 .reviews__title:not(:last-child) {
   /* Если меньше контейнера */
@@ -1205,11 +1308,6 @@ body {
   }
 }
 
-.reviews-columns__item {
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-}
 .reviews-columns__body {
   background-color: var(--color-light-gray);
   /* Если меньше контейнера */
@@ -1331,6 +1429,9 @@ body {
 
 .contacts-columns__item {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .contacts-columns__icon:not(:last-child) {
   /* Если меньше контейнера */

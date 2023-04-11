@@ -4,16 +4,12 @@ function sliders() {
 
    // ================================== // механизм // ================================== //
 
-   // настройки (false бозначает что еще не инициализирован)
-   let slider = false
+
    function sliderMaxWidth(section, width, settings) {
 
+      // настройки (false бозначает что еще не инициализирован)
 
-      function init() {
 
-         slider = new Swiper(`${section} .swiper`, settings)
-
-      }
 
 
       // если ширина меньше\ниже указаной ширины
@@ -21,6 +17,8 @@ function sliders() {
          // если меньше
 
          // показать (мобила)
+
+
 
          // одноразово добавляет слайдер
          if (!document.querySelector(`${section} .swiper._active`)) {
@@ -30,7 +28,12 @@ function sliders() {
             }
 
             // основное
+            function init() {
+
+               new Swiper(`${section} .swiper`, settings)
+            }
             init()
+
             document.querySelector(`${section} .swiper`).classList.add('_active')
             console.log('показать (мобила)');
 
@@ -53,24 +56,22 @@ function sliders() {
          document.querySelector(`${section} .swiper-wrapper`).classList.add('_grid')
 
          // одноразово убираем слайдер если есть
-         if (slider) {
-            if (document.querySelector(`${section} .swiper._active`)) {
+         if (document.querySelector(`${section} .swiper._active`)) {
 
-               // основное
-               slider.destroy()
-               document.querySelector(`${section} .swiper`).classList.remove('_active')
-               console.log('скрыть (пк)');
+            // основное
+            document.querySelector(`${section} .swiper`).swiper.destroy()
+            document.querySelector(`${section} .swiper`).classList.remove('_active')
+            console.log('скрыть (пк)');
 
-               // дополнительное
-               if (document.querySelector(`${section} .swiper-button-prev`)) {
-                  document.querySelector(`${section} .swiper-button-prev`).classList.remove('_active')
-                  document.querySelector(`${section} .swiper-button-next`).classList.remove('_active')
-               }
-               if (document.querySelector(`${section} .swiper-pagination`)) {
-                  document.querySelector(`${section} .swiper-pagination`).classList.remove('_active')
-               }
-
+            // дополнительное
+            if (document.querySelector(`${section} .swiper-button-prev`)) {
+               document.querySelector(`${section} .swiper-button-prev`).classList.remove('_active')
+               document.querySelector(`${section} .swiper-button-next`).classList.remove('_active')
             }
+            if (document.querySelector(`${section} .swiper-pagination`)) {
+               document.querySelector(`${section} .swiper-pagination`).classList.remove('_active')
+            }
+
          }
 
 
@@ -84,7 +85,7 @@ function sliders() {
 
 
          // добавить слайдер если карточек больше чем указаный length
-         if (length !== undefined) {
+         if (length !== false) {
 
             if (document.querySelectorAll(`${section} .swiper-slide`).length > length) {
 
@@ -127,7 +128,11 @@ function sliders() {
 
    // ================================== // partners // ================================== //
 
-   start('.partners', 1024, 5, {
+
+
+
+
+   start('.partners', 1024, false, {
 
       spaceBetween: 30,
       grabCursor: true,
@@ -139,11 +144,11 @@ function sliders() {
       },
 
       navigation: {
-         nextEl: '.swiper-button-next',
-         prevEl: '.swiper-button-prev'
+         nextEl: '.partners .swiper-button-next',
+         prevEl: '.partners .swiper-button-prev'
       },
       pagination: {
-         el: '.swiper-pagination',
+         el: '.partners .swiper-pagination',
          clickable: true,
       },
 
@@ -167,10 +172,7 @@ function sliders() {
 
    })
 
-
-
-
-   start('.gallery', 1024, 8, {
+   start('.gallery', 1024, false, {
 
       grabCursor: true,
       loop: true,
@@ -181,11 +183,50 @@ function sliders() {
       },
 
       navigation: {
-         nextEl: '.swiper-button-next',
-         prevEl: '.swiper-button-prev'
+         nextEl: '.gallery .swiper-button-next',
+         prevEl: '.gallery .swiper-button-prev'
       },
       pagination: {
-         el: '.swiper-pagination',
+         el: '.gallery .swiper-pagination',
+         clickable: true,
+      },
+
+      breakpoints: {
+         // 320: {
+         //    slidesPerView: 1,
+         // },
+         // 425: {
+         //    slidesPerView: 1,
+         // },
+         552: {
+            slidesPerView: 1,
+         },
+         768: {
+            slidesPerView: 2,
+         },
+         1024: {
+            slidesPerView: 5,
+         },
+      }
+
+   })
+
+   start('.reviews', 768, false, {
+
+      spaceBetween: 30,
+      grabCursor: true,
+      loop: true,
+      speed: 1200,
+      autoplay: {
+         delay: 3500,
+      },
+
+      navigation: {
+         nextEl: '.reviews .swiper-button-next',
+         prevEl: '.reviews .swiper-button-prev'
+      },
+      pagination: {
+         el: '.reviews .swiper-pagination',
          clickable: true,
       },
 
@@ -203,7 +244,7 @@ function sliders() {
             slidesPerView: 3,
          },
          1024: {
-            slidesPerView: 4,
+            slidesPerView: 3,
          },
       }
 
