@@ -13,6 +13,9 @@ import {
 import {
    numberAnimation,
 } from "./chunks/numberAnimation.js"
+import {
+   preloader,
+} from "./chunks/preloader.js"
 
 
 burgerMenu()
@@ -21,6 +24,7 @@ spoilers()
 sliders()
 numberAnimation()
 
+preloader()
 
 
 

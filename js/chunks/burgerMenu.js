@@ -77,8 +77,8 @@ function burgerMenu() {
 
 
 
-      document.querySelector('body').style.paddingRight = `0px`
-      document.querySelector('body').style.overflowY = `auto`
+      // document.querySelector('body').style.paddingRight = `0px`
+      // document.querySelector('body').style.overflowY = `auto`
 
       // открывается\закрывается
       // взаимодействуется тень

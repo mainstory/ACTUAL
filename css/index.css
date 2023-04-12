@@ -9,7 +9,7 @@
   --color-gray: #999999;
   --color-orange: #F7654A;
   --color-light-gray: #F7F7F7;
-  --color-background: #e5e5e5;
+  --color-background: #fff;
   --font-family-main: "Oswald";
   --font-family-second: "Open Sans";
 }
@@ -312,7 +312,7 @@ body {
 }
 @media (any-hover: hover) {
   .menu-body__link {
-    transition: background-color 0.3s, background-color 0.3s;
+    transition: background-color 0.1s, background-color 0.1s;
   }
   .menu-body__link:hover {
     background-color: var(--color-orange);
@@ -1550,4 +1550,26 @@ body {
   max-width: 1230px;
   margin: 0px auto;
   padding: 0 15px;
+}
+
+.preloader {
+  background-color: var(--color-white);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5000;
+}
+.preloader._close {
+  display: none;
+}
+.preloader__body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+body._scroll-hidden {
+  overflow: hidden;
 }
