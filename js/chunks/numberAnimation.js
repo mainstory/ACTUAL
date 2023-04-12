@@ -44,9 +44,6 @@ function numberAnimation() {
 
          if (value < 0) {
             start()
-            start()
-            start()
-            start()
             document.querySelector('[data-experience]').classList.add('_stop-animation')
 
          }
