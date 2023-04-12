@@ -13,18 +13,23 @@ import {
 import {
    numberAnimation,
 } from "./chunks/numberAnimation.js"
-import {
-   preloader,
-} from "./chunks/preloader.js"
 
 
-burgerMenu()
-headerAnimation()
-spoilers()
-sliders()
-numberAnimation()
+const preloader = document.querySelector('[data-preloader]')
+setTimeout(() => {
+   preloader.classList.add('_close')
 
-preloader()
+   document.querySelector('body').style.paddingRight = `0px`
+   document.querySelector('body').style.overflowY = `auto`
+
+
+   burgerMenu()
+   headerAnimation()
+   spoilers()
+   sliders()
+   numberAnimation()
+
+}, 1300)
 
 
 
