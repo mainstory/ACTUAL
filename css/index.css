@@ -243,6 +243,7 @@ body {
   height: 100%;
   background-color: #e5e5e5;
   filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.2));
+  overflow: auto;
   transition: right 0.5s;
 }
 .menu._active {
